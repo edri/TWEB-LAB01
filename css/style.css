@@ -1,0 +1,24 @@
+.container {
+	text-align: center;
+}
+
+.panel {
+	margin-top: 20px;
+	text-align: left;
+}
+
+.title {
+	border-bottom: 1px solid #D4D4D4;
+}
+
+.buttons {
+	text-align: left;
+}
+
+.footer {
+	background-color: #F5F5F5;
+	bottom: 0;
+	padding: 15px 15px 15px 50px;
+	position: fixed;
+	width: 100%;
+}
