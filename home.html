@@ -18,10 +18,10 @@
 		<link rel="stylesheet" href="css/style.css">
 		
 		<script>
-			$(document).on("mousemove", function(event) {
-				var gender = chance.gender();
+			$(document).mousemove(function(event) {
+				var genderP = chance.gender();
 				
-				if (gender === "Male")
+				if (genderP === "Male")
 				{
 					$("#student").attr("class", "panel panel-info");
 				}
@@ -30,14 +30,21 @@
 					$("#student").attr("class", "panel panel-danger");
 				}
 			
-				$("#studentText").text("Hello " + chance.name({gender: "male"}) + " (" + gender + ") !");
+				$("#studentText").text("Hello " + chance.name({gender: genderP}) + " (" + genderP + ") !");
 			
 				$("#footer").text(event.pageX + ", " + event.pageY);
 			});
 			
-			$(document).ready(function() {
-				
+			$(document).keydown(function(event) {
+				// SHIFT KEY.
+				if (event.keyCode == 16)
+				{
+					var genderP = chance.gender();
+					$("#studentText").append("<br/>Hello " + chance.name({gender: genderP}) + " (" + genderP + ") !");
+				}
+			});
 			
+			$(document).ready(function() {
 				window.setInterval(function() {
 					$("#clock").text(new Date());
 				}, 1000);
